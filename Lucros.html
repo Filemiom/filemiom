@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucro e Custos - 2024</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Lucro Bruto, Lucro Líquido e Custos - 2024</h1>
+    
+    <h2>Tabela de Lucros e Custos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mês</th>
+                <th>Lucro Bruto</th>
+                
+                <th>Custo Matéria Prima</th>
+                <th>Custo Manutenção</th>
+                <th>Folha de Pagamento</th>
+                <th>Custo de Produção</th>
+                <th>Lucro Líquido</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-lucros"></tbody>
+    </table>
+    
+    <h2>Gráficos de Lucro e Custos</h2>
+    <canvas id="graficoLucros"></canvas>
+    
+    <script>
+        
+        async function fetchPlacasVideo() {
+            try {
+                const response = await fetch('http://localhost:3000/placas-video');
+                const placas = await response.json();
+                return placas.reduce((acc, placa) => {
+                    acc[placa.nome] = {
+                        preco: parseFloat(placa.preco),
+                        quantidade: Math.floor(Math.random() * 1) + 2, 
+                        custoUnitario: parseFloat(placa.preco) * 0.7 
+                    };
+                    return acc;
+                }, {});
+            } catch (error) {
+                console.error('Erro ao buscar dados das placas de vídeo:', error);
+                return {};
+            }
+        }
+
+        
+        async function main() {
+            const dadosProducao = await fetchPlacasVideo();
+            const lucrosBrutos = [100000, 120000, 130000, 200000,180000, 170000, 90000, 180000, 135900, 179800, 135900, 135900];
+            const salarios = [3500, 4500, 5500, 6000, 4000];
+            const folhaPagamento = salarios.reduce((acc, salario) => acc + salario, 0);
+
+            function random(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            const lucroLiquido = [];
+            const custoMateriaPrima = [];
+            const custoManutencao = [];
+            const custoProducaoTotal = [];
+            let tabelaHtml = '';
+
+            lucrosBrutos.forEach((lucroBruto, index) => {
+                const cmat = random(0.1, 0.2) * lucroBruto;
+                const cman = random(0.15, 0.20) * lucroBruto; 
+                let custoProducaoTotalPlacas = 0;
+
+                Object.values(dadosProducao).forEach(({ quantidade, custoUnitario }) => {
+                    custoProducaoTotalPlacas += quantidade * custoUnitario;
+                });
+
+                const ll = lucroBruto - cmat - cman - folhaPagamento - custoProducaoTotalPlacas;
+
+                tabelaHtml += `
+                    <tr>
+                        <td>${meses[index]}</td>
+                        <td>R$ ${lucroBruto.toFixed(2)}</td>
+                        
+                        <td>R$ ${cmat.toFixed(2)}</td>
+                        <td>R$ ${cman.toFixed(2)}</td>
+                        <td>R$ ${folhaPagamento.toFixed(2)}</td>
+                        <td>R$ ${custoProducaoTotalPlacas.toFixed(2)}</td>
+                        <td>R$ ${ll.toFixed(2)}</td>
+                    </tr>
+                `;
+
+                lucroLiquido.push(ll);
+                custoMateriaPrima.push(cmat);
+                custoManutencao.push(cman);
+                custoProducaoTotal.push(custoProducaoTotalPlacas);
+            });
+
+            document.getElementById('tabela-lucros').innerHTML = tabelaHtml;
+
+            const ctx = document.getElementById('graficoLucros').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: meses,
+                    datasets: [
+                        {
+                            label: 'Lucro Líquido',
+                            data: lucroLiquido,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            fill: false
+                        },
+                        {
+                            label: 'Custo Matéria Prima',
+                            data: custoMateriaPrima,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            fill: false
+                        },
+                        {
+                            label: 'Custo Manutenção',
+                            data: custoManutencao,
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            fill: false
+                        },
+                        {
+                            label: 'Custo de Produção (Total)',
+                            data: custoProducaoTotal,
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        main();
+    </script>
+</body>
+</html>

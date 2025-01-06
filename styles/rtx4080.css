@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+header {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #202b3b;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.specs, .price, .benchmarks {
+    margin: 30px 0;
+}
+
+.specs h2, .price h2, .benchmarks h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1e90ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.specs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.specs li {
+    background: #2d3e50;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.specs li span {
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+.price {
+    text-align: center;
+}
+
+.price h2 {
+    color: #1e90ff;
+}
+
+.price p {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.price button {
+    background: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.price button:hover {
+    background: #145a8d;
+}
+
+.benchmarks table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.benchmarks table, .benchmarks th, .benchmarks td {
+    border: 1px solid #ddd;
+}
+
+.benchmarks th, .benchmarks td {
+    text-align: center;
+    padding: 10px;
+}
+
+.benchmarks th {
+    background: #1e90ff;
+    color: #fff;
+}
+
+.benchmarks td {
+    background: #2d3e50;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e1e1e;
+    color: #fff;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}

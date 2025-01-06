@@ -1,0 +1,162 @@
+/* Configuração geral */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364); /* Fundo gradiente */
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00d9ff;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d9ff;
+}
+
+/* Seção hero */
+.hero {
+    text-align: center;
+    padding: 50px;
+    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #00d9ff;
+    text-shadow: 2px 2px #000;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d9ff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #007a99;
+}
+
+/* Container de produto */
+.product-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+.image-container img {
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+.details {
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.details h2 {
+    color: #00d9ff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details ul li {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #00d9ff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.buy-button:hover {
+    background: #007a99;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #00d9ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

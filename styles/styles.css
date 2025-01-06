@@ -1,0 +1,285 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #00d9ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d9ff;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #00d9ff;
+    text-shadow: 2px 2px #000;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d9ff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #007a99;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 50px;
+}
+
+.product-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 15px 0;
+    color: #00d9ff;
+}
+
+.product-card p {
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d9ff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #007a99;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #00d9ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h1 {
+    font-size: 2rem;
+    color: #00d9ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #f0f0f0;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d9ff;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #007a99;
+}
+
+.form-container p {
+    color: #ffffff;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.form-container a {
+    color: #00d9ff;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background: #007bff;
+    color: #fff;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+
+#logoutBtn {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#logoutBtn:hover {
+    background-color: #ff1a1a;
+}
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Relação</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Cadastro de Relação</div>
+  </header>
+
+  <div class="form-container">
+    <h1>Cadastrar Nova Relação</h1>
+    <form id="associationForm" action="/cadastroRelacao" method="POST">
+      <label for="idFuncionario">Funcionário:</label>
+      <select id="idFuncionario" name="idFuncionario" required>
+        <option value="">Selecione um funcionário</option>
+        
+      </select>
+      
+      <label for="idPlacaVideo">Placa de Vídeo:</label>
+      <select id="idPlacaVideo" name="idPlacaVideo" required>
+        <option value="">Selecione uma placa de vídeo</option>
+        
+      </select>
+      
+      <label for="dataAssociacao">Data de Associação:</label>
+      <input type="date" id="dataAssociacao" name="dataAssociacao" required>
+      
+      <button type="submit">Cadastrar</button>
+      <p id="error-message" class="error"></p>
+    </form>
+  </div>
+
+  <footer>
+    <p><a href="admin.html">Voltar para o admin</a></p>
+  </footer>
+
+  <script src="scripts/cadastroRelacao.js"></script>
+</body>
+</html>
